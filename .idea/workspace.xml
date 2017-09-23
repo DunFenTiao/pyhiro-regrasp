@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5927d1fc-a026-4aa9-b84f-7f3bf216998c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manipulation/binpicking/dropgrip.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/connectst.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/manipulation/regrasp/regriptppass_backup.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link0.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link0.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link1.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link1.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Link2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Tippcc.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lfinger_Tippcc.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lhand_Link0_Plan2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Lhand_Link0_Plan2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link0.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link0.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link1.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link1.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Link2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Tippcc.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rfinger_Tippcc.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rhand_Link0_Plan2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/HRP-5P_ConceptDesign_Rhand_Link0_Plan2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link0.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link0.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link1.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link1.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lfinger_Link2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lhand_Link0_Plan2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Lhand_Link0_Plan2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link0.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link0.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link1.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link1.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rfinger_Link2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rhand_Link0_Plan2.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/HRP-5P_ConceptDesign_Rhand_Link0_Plan2.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/Precc.egg" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threeegg/nomat/Precc.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_base_link_nm.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_base_link_nm.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_finger_link_nm.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_finger_link_nm.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_finger_tip_link_nm.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_finger_tip_link_nm.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_inner_knuckle_link_nm.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_inner_knuckle_link_nm.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_knuckle_link_nm.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/nomat/robotiq_85_knuckle_link_nm.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_base_link.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_base_link.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_finger_link.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_finger_link.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_finger_tip_link.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_finger_tip_link.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_inner_knuckle_link.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_inner_knuckle_link.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_knuckle_link.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_knuckle_link.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_tip_precc.egg" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85egg/robotiq_85_tip_precc.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/supports/tabletop.egg" afterPath="$PROJECT_DIR$/manipulation/grip/supports/tabletop.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/supports/tabletop_nxt.egg" afterPath="$PROJECT_DIR$/manipulation/grip/supports/tabletop_nxt.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pyhiro.iml" afterPath="$PROJECT_DIR$/.idea/pyhiro.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/dbaccess.py" afterPath="$PROJECT_DIR$/database/dbaccess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/binpicking/dropblt.py" afterPath="$PROJECT_DIR$/manipulation/binpicking/dropblt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/binpicking/dropodemanual.py" afterPath="$PROJECT_DIR$/manipulation/binpicking/dropodemanual.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/circlestar.obj" afterPath="$PROJECT_DIR$/manipulation/grip/circlestar.obj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/freegrip.py" afterPath="$PROJECT_DIR$/manipulation/grip/freegrip.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/freegripcontactpairs.py" afterPath="$PROJECT_DIR$/manipulation/grip/freegripcontactpairs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/freetabletopplacement.py" afterPath="$PROJECT_DIR$/manipulation/grip/freetabletopplacement.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/freethreegrip.py" afterPath="$PROJECT_DIR$/manipulation/grip/freethreegrip.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three.py" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three_sw/preccfgrleft.STL" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three_sw/preccfgrleft.STL" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three_sw/preccfgrright.STL" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5three_sw/preccfgrright.STL" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threenm.py" afterPath="$PROJECT_DIR$/manipulation/grip/hrp5three/hrp5threenm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/objects/planelowerbody.stl" afterPath="$PROJECT_DIR$/manipulation/grip/objects/planelowerbody.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/objects/planewheel.stl" afterPath="$PROJECT_DIR$/manipulation/grip/objects/planewheel.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/objects/sandpart.stl" afterPath="$PROJECT_DIR$/manipulation/grip/objects/sandpart.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/objects/tool.stl" afterPath="$PROJECT_DIR$/manipulation/grip/objects/tool.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/objects/ttube.stl" afterPath="$PROJECT_DIR$/manipulation/grip/objects/ttube.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85.py" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85nm.py" afterPath="$PROJECT_DIR$/manipulation/grip/robotiq85/rtq85nm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/sample.py" afterPath="$PROJECT_DIR$/manipulation/grip/sample.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/tmpcp.pickle" afterPath="$PROJECT_DIR$/manipulation/grip/tmpcp.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/tmpnocp.pickle" afterPath="$PROJECT_DIR$/manipulation/grip/tmpnocp.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/wheel.stl" afterPath="$PROJECT_DIR$/manipulation/grip/wheel.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/grip/wheelmeter.stl" afterPath="$PROJECT_DIR$/manipulation/grip/wheelmeter.stl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp2ksglplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp2ksglplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5nmixplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5nmixplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5nsglplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5nsglplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5plot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/hrp5plot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/main_nxtregriptppassrealwithplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/main_nxtregriptppassrealwithplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtgooff.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtgooff.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtmixplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtmixplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/examples/nxttppassplot.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/examples/nxttppassplot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/floatingposes.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/floatingposes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/regriptpp.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/regriptpp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/regriptppass.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/regriptppass.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/regriptppfp.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/regriptppfp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manipulation/regrasp/tableplacements.py" afterPath="$PROJECT_DIR$/manipulation/regrasp/tableplacements.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motionplanning/collisionchecker.py" afterPath="$PROJECT_DIR$/motionplanning/collisionchecker.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/motionplanning/nxtrrt.py" afterPath="$PROJECT_DIR$/motionplanning/nxtrrt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotcon/nextage.py" afterPath="$PROJECT_DIR$/robotcon/nextage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotcon/rtq85.py" afterPath="$PROJECT_DIR$/robotcon/rtq85.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robotsim/nextage/nxt.py" afterPath="$PROJECT_DIR$/robotsim/nextage/nxt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trimesh/path/polygons.py" afterPath="$PROJECT_DIR$/trimesh/path/polygons.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/dbcvt.py" afterPath="$PROJECT_DIR$/utils/dbcvt.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/robotmath.py" afterPath="$PROJECT_DIR$/utils/robotmath.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="tableplacements.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/tableplacements.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-648">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#19#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startgoalgenerate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/startgoalgenerate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3076">
+              <caret line="157" column="27" lean-forward="true" selection-start-line="157" selection-start-column="27" selection-end-line="157" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dropworkcell_t2tubeBox.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_t2tubeBox.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="507" column="70" lean-forward="false" selection-start-line="507" selection-start-column="70" selection-end-line="507" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="11">
+                <caret line="4" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regriptpp_fixturequick.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="222" column="27" lean-forward="true" selection-start-line="222" selection-start-column="27" selection-end-line="222" selection-end-column="27" />
+              <folding>
+                <element signature="e#19#28#0" expanded="true" />
+                <element signature="e#3419#5621#0" expanded="false" />
+                <element signature="e#5706#7403#0" expanded="false" />
+                <element signature="e#30883#32232#0" expanded="false" />
+                <element signature="e#32322#33761#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nxtsglplot_experiment_fixturequick.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment_fixturequick.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="79" column="48" lean-forward="false" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>self.bulletworldhp</find>
+      <find>object</find>
+      <find>saveto</find>
+      <find>set</find>
+      <find>rot</find>
+      <find>tag</find>
+      <find>position</find>
+      <find>workcell</find>
+      <find>move</find>
+      <find>False</find>
+      <find>no result</find>
+      <find>freetable</find>
+      <find>mid</find>
+      <find>startgoal</find>
+      <find>self.directshortestpaths</find>
+      <find>self.startnodeids</find>
+      <find>doverh</find>
+      <find>angle</find>
+      <find>angel</find>
+      <find>valueerror</find>
+      <find>discretesize</find>
+      <find>ik</find>
+      <find>print</find>
+      <find>RegripTpp</find>
+      <find>gdb</find>
+      <find>self.angles</find>
+      <find>workcellpath</find>
+      <find>print</find>
+      <find>find</find>
+      <find>dropworkcell</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/motionplanning/nxtrrt.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/grip/freetabletopplacement.py" />
+        <option value="$PROJECT_DIR$/motionplanning/collisionchecker.py" />
+        <option value="$PROJECT_DIR$/manipulation/freegrip/freegrip.py" />
+        <option value="$PROJECT_DIR$/utils/dbcvt.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freegripcontactpairs_air.py" />
+        <option value="$PROJECT_DIR$/manipulation/grip/freegrip.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freegrip.py" />
+        <option value="E:/pyhiro-master/manipulation/binpicking/dropodemanual.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropobject_afford.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_afford.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/main_nxtregriptppassrealwithplot.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/regriptppass.py" />
+        <option value="$PROJECT_DIR$/robotcon/rtq85.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/main_nxtregriptppassrealwithplot.py" />
+        <option value="$PROJECT_DIR$/robotsim/nextage/nxt.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_Box_easy.py" />
+        <option value="$PROJECT_DIR$/robotcon/nextage.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/startpoint" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplotreal.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_Box.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot.py" />
+        <option value="$PROJECT_DIR$/manipulation/grip/freetabletopplacement.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot_experiment.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/regriptpp.bk.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/regriptpp.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/pathplot.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/pathplot0.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_t2tubeBox.py" />
+        <option value="$PROJECT_DIR$/manipulation/binpicking/dropblt.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick -check.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/pathplot.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freegrip_air.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freetabletopplacement.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/startgoalgenerate.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/tableplacements.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/taskik.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot_experiment_quick.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/regriptpp_quick.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/dropworkcellgrip.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_cb.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_cameraCamera.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment_fixturequick.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_camear_tbc.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick.py" />
+        <option value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplotreal.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="917" />
+    <option name="y" value="168" />
+    <option name="width" value="2190" />
+    <option name="height" value="1285" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+              <item name="regrasp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+              <item name="regrasp" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+              <item name="regrasp_onworkcell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+              <item name="regrasp_onworkcell" type="462c0819:PsiDirectoryNode" />
+              <item name="dropsimulation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="manipulation" type="462c0819:PsiDirectoryNode" />
+              <item name="regrasp_onworkcell" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="robotcon" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manipulation/grip/backup/freegripcontactpairs.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/manipulation/grip/backup/freegripcontactpairs.py" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\manipulation\binpicking\objects" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.pathplot_camear_tbc">
+    <configuration name="dropworkcell_cameraCamera" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyhiro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_cameraCamera.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="dropworkcellgrip" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyhiro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/dropworkcellgrip.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="nxtsglplot_experiment_fixturequick" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyhiro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment_fixturequick.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="pathplot_camear_tbc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulation/regrasp/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyhiro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_camear_tbc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="regriptpp_fixturequick" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pyhiro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.dropworkcellgrip" />
+      <item index="1" class="java.lang.String" itemvalue="Python.nxtsglplot_experiment_fixturequick" />
+      <item index="2" class="java.lang.String" itemvalue="Python.regriptpp_fixturequick" />
+      <item index="3" class="java.lang.String" itemvalue="Python.pathplot_camear_tbc" />
+      <item index="4" class="java.lang.String" itemvalue="Python.dropworkcell_cameraCamera" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.pathplot_camear_tbc" />
+        <item index="1" class="java.lang.String" itemvalue="Python.nxtsglplot_experiment_fixturequick" />
+        <item index="2" class="java.lang.String" itemvalue="Python.dropworkcellgrip" />
+        <item index="3" class="java.lang.String" itemvalue="Python.dropworkcell_cameraCamera" />
+        <item index="4" class="java.lang.String" itemvalue="Python.regriptpp_fixturequick" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5927d1fc-a026-4aa9-b84f-7f3bf216998c" name="Default" comment="" />
+      <created>1501465481207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501465481207</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Doctests_in___init__ - 2017.09.20 at 12h 22m 08s.xml">
+      <configuration name="Doctests in __init__" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_robotmath - 2017.07.31 at 15h 06m 55s.xml">
+      <configuration name="Doctests in robotmath" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="917" y="168" width="2190" height="1285" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1763954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.33551848" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28393966" sideWeight="0.6644815" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16807511" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938856" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39662823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.33551848" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24653313" sideWeight="0.6644815" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938856" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11607678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2517659" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3969795" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/trimesh/__init__.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/dropworkcellgrip.py</url>
+          <line>161</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulation/regrasp/grip/freetabletopplacement.py</url>
+          <line>423</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/robotsim/nextage/nxtplot.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp.py</url>
+          <line>243</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/tableplacements.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplotreal.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="23" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://C:/Python27/Lib/site-packages/direct/showbase/Loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/networkx/algorithms/shortest_paths/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="368" column="26" lean-forward="true" selection-start-line="368" selection-start-column="26" selection-end-line="368" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/regriptpp_compare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="368" column="25" lean-forward="false" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
+          <folding>
+            <element signature="e#42#74#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/grip/freetabletopplacement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1372">
+          <caret line="461" column="31" lean-forward="false" selection-start-line="461" selection-start-column="31" selection-end-line="461" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="516" column="0" lean-forward="true" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+            <element signature="e#2533#3159#0" expanded="false" />
+            <element signature="e#3203#5378#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/regriptpp.bk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="165" column="28" lean-forward="true" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="540" column="5" lean-forward="true" selection-start-line="540" selection-start-column="5" selection-end-line="540" selection-end-column="5" />
+          <folding>
+            <element signature="e#42#74#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/regriptpp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="292" column="81" lean-forward="true" selection-start-line="292" selection-start-column="81" selection-end-line="292" selection-end-column="81" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/pathplot0.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="110" column="25" lean-forward="true" selection-start-line="110" selection-start-column="25" selection-end-line="110" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_Box_easy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="501" column="8" lean-forward="false" selection-start-line="501" selection-start-column="8" selection-end-line="501" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/binpicking/dropblt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="1602" column="8" lean-forward="false" selection-start-line="1602" selection-start-column="8" selection-end-line="1602" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick -check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="678" column="14" lean-forward="true" selection-start-line="678" selection-start-column="14" selection-end-line="678" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/networkx/classes/digraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="425" column="8" lean-forward="false" selection-start-line="425" selection-start-column="8" selection-end-line="425" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick.backup-1s.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2673">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="3061" column="4" lean-forward="false" selection-start-line="3061" selection-start-column="4" selection-end-line="3061" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trimesh/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#548#580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freegrip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15703">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/wheel.stl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment_fixturequick -check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="80" column="45" lean-forward="true" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/tableplacements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="361" column="33" lean-forward="true" selection-start-line="361" selection-start-column="33" selection-end-line="361" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/results/0912/camera-box/0912-ok-box-camera/nxtsglplotreal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="393" column="28" lean-forward="true" selection-start-line="393" selection-start-column="28" selection-end-line="393" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/regriptpp_quick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="858" column="17" lean-forward="true" selection-start-line="858" selection-start-column="17" selection-end-line="858" selection-end-column="17" />
+          <folding>
+            <element signature="e#2446#3067#0" expanded="false" />
+            <element signature="e#11887#23581#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/results/0912/camera-camear-affordance/0912-ok-camera-camera/nxtsglplotreal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="382" column="0" lean-forward="true" selection-start-line="382" selection-start-column="0" selection-end-line="382" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/regriptppass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17593">
+          <caret line="51" column="89" lean-forward="true" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/pathplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_cameraBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5269">
+          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_ccameraafford.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13667">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_Box.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="487" column="65" lean-forward="true" selection-start-line="487" selection-start-column="65" selection-end-line="487" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1385">
+          <caret line="404" column="0" lean-forward="true" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot_experiment_quick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1402">
+          <caret line="73" column="52" lean-forward="true" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_cb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="258" column="48" lean-forward="true" selection-start-line="258" selection-start-column="48" selection-end-line="258" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/taskik.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="43" column="63" lean-forward="false" selection-start-line="43" selection-start-column="63" selection-end-line="43" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/pathplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="271" column="33" lean-forward="true" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_t2tube_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="152" column="18" lean-forward="false" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/pathplot_camear_tbc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="239" column="24" lean-forward="false" selection-start-line="239" selection-start-column="24" selection-end-line="239" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp/examples/nxtsglplot_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freegrip_air.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="587" column="53" lean-forward="true" selection-start-line="587" selection-start-column="53" selection-end-line="587" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/freetabletopplacement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2906">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding>
+            <element signature="e#2500#3132#0" expanded="false" />
+            <element signature="e#3183#3487#0" expanded="false" />
+            <element signature="e#16361#18019#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_cameraCamera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="189" column="95" lean-forward="false" selection-start-line="189" selection-start-column="95" selection-end-line="189" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/dropworkcellgrip.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="614" column="25" lean-forward="false" selection-start-line="614" selection-start-column="25" selection-end-line="614" selection-end-column="25" />
+          <folding>
+            <element signature="e#5408#5669#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/regriptpp_fixturequick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="222" column="27" lean-forward="true" selection-start-line="222" selection-start-column="27" selection-end-line="222" selection-end-column="27" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+            <element signature="e#3419#5621#0" expanded="false" />
+            <element signature="e#5706#7403#0" expanded="false" />
+            <element signature="e#30883#32232#0" expanded="false" />
+            <element signature="e#32322#33761#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplot_experiment_fixturequick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="79" column="48" lean-forward="false" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/nxtsglplotreal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-403">
+          <caret line="497" column="24" lean-forward="true" selection-start-line="497" selection-start-column="24" selection-end-line="497" selection-end-column="24" />
+          <folding>
+            <element signature="e#42#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/grip/tableplacements.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/examples/startgoalgenerate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3076">
+          <caret line="157" column="27" lean-forward="true" selection-start-line="157" selection-start-column="27" selection-end-line="157" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulation/regrasp_onworkcell/dropsimulation/dropworkcell_t2tubeBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="507" column="70" lean-forward="false" selection-start-line="507" selection-start-column="70" selection-end-line="507" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="11">
+            <caret line="4" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,5 +1,5 @@
 from shapely.geometry import Polygon, Point, LineString
-from rtree            import Rtree
+#from rtree            import Rtree
 from collections      import deque
 
 import numpy as np

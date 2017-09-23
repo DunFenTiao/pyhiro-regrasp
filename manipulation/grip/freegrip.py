@@ -585,7 +585,7 @@ if __name__=='__main__':
     base = pandactrl.World(camp=[700,300,700], lookatp=[0,0,100])
     this_dir, this_filename = os.path.split(__file__)
     # objpath = os.path.join(this_dir, "objects", "sandpart.stl")
-    objpath = os.path.join(this_dir, "objects", "ttube.stl")
+    #objpath = os.path.join(this_dir, "objects", "ttube.stl")
     # objpath = os.path.join(this_dir, "objects", "tool.stl")
     # objpath = os.path.join(this_dir, "objects", "tool2.stl")
     # objpath = os.path.join(this_dir, "objects", "planewheel.stl")
@@ -593,8 +593,23 @@ if __name__=='__main__':
     # objpath = os.path.join(this_dir, "objects", "planefrontstay.stl")
     # objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
 
+    this_dir = "E:/project/manipulation/regrasp_onworkcell/dropsimulation"
+    # objpath = os.path.join(this_dir, "objects", "t2tube.stl")
+    #objpath = os.path.join(this_dir, "objects", "spanner.stl")
+    # objpath = os.path.join(this_dir, "objects", "sandpart.stl")
+    # objpath = os.path.join(this_dir, "objects", "ttube.stl")
+    # objpath = os.path.join(this_dir, "objects", "tool.stl")
+    # objpath = os.path.join(this_dir, "objects", "tool2.stl")
+    # objpath = os.path.join(this_dir, "objects", "planewheel.stl")
+    # objpath = os.path.join(this_dir, "objects", "planelowerbody.stl")
+    # objpath = os.path.join(this_dir, "objects", "planefrontstay.stl")
+    #objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
+    #objpath = os.path.join(this_dir, "objects", "planewheel.stl")
+    objpath = os.path.join(this_dir, "objects", "CameraFrontCase.stl")
+
+
     handpkg = rtq85nm
-    freegriptst = Freegrip(objpath, handpkg, readser=False, torqueresist = 50)
+    freegriptst = Freegrip(objpath, handpkg, readser=False, torqueresist = 100)
 
     freegriptst.segShow(base, togglesamples=False, togglenormals=False,
                         togglesamples_ref=False, togglenormals_ref=False,

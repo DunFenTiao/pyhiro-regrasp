@@ -1,13 +1,15 @@
 import numpy as np
 import math
-from scipy import weave
+#import weave
+#from scipy import weave
+
 
 # def rodrigues(axis, theta, mat = None):
 #     '''
 #     Compute the rodrigues matrix using the given axis and theta
 #
 #     ## input
-#     axis:
+#     axis:s
 #         a 1-by-3 numpy array list
 #     theta:
 #         angle in degree

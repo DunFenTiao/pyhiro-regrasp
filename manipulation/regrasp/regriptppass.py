@@ -75,8 +75,8 @@ class GraphTpp(object):
         :param idarm: value = 1 "lft" or 2 "rgt", which arm to use
         :return:
 
-        author: weiwei
-        date: 20170112
+        author: jiayao
+        date: 20170908
         """
 
         # load idarm
@@ -85,47 +85,62 @@ class GraphTpp(object):
         # get the global grip ids
         # and prepare the global edges
         # for each globalgripid, find all its tabletopids (pertaining to placements)
+        # load idarm
+        idarm = self.gdb.loadIdArm(armname)
+        idhand = self.gdb.loadIdHand(self.handname)
+
+        # get the global grip ids
+        # and prepare the global edges
+        # for each globalgripid, find all its tabletopids (pertaining to placements)
         globalidsedges = {}
         sql = "SELECT idfreeairgrip FROM freeairgrip,object WHERE freeairgrip.idobject=object.idobject AND \
-                object.name LIKE '%s'" % self.dbobjname
+                       object.name LIKE '%s' AND freeairgrip.idhand = %d" % (self.dbobjname, idhand)
+        # sql = "SELECT dropfreegrip.iddropfreegrip FROM dropfreegrip,object WHERE dropfreegrip.idobject=object.idobject AND \
+        #    object.name LIKE '%s' AND dropfreegrip.idhand = %d" % (self.dbobjname, idhand)
+        # sql = "SELECT dropworkcellgrip.iddropworkcellgrip FROM dropworkcellgrip,object WHERE dropworkcellgrip.idobject=object.idobject AND \
+        #             object.name LIKE '%s' AND dropworkcellgrip.idhand = %d" % (self.dbobjname, idhand)
+
         result = self.gdb.execute(sql)
+
         if len(result) == 0:
             raise ValueError("Plan freeairgrip first!")
         for ggid in result:
             globalidsedges[str(ggid[0])] = []
             self.globalgripids.append(ggid[0])
-        sql = "SELECT tabletopplacements.idtabletopplacements, angle.value, \
-                tabletopplacements.idfreetabletopplacement, tabletopplacements.tabletopposition, \
-                tabletopplacements.rotmat FROM \
-                tabletopplacements,freetabletopplacement,angle,object WHERE \
-                tabletopplacements.idangle=angle.idangle AND \
-                tabletopplacements.idfreetabletopplacement=freetabletopplacement.idfreetabletopplacement AND \
-                freetabletopplacement.idobject=object.idobject AND \
-                object.name LIKE '%s' AND angle.value IN (0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0)" \
-                % self.dbobjname
+
+        sql = "SELECT dropstablepos.iddropstablepos,dropstablepos.rot,dropstablepos.pos,angle_drop.value FROM \
+                              dropstablepos,object,angle_drop WHERE \
+                              dropstablepos.idobject=object.idobject AND \
+                              object.name LIKE '%s' " % self.dbobjname
         result = self.gdb.execute(sql)
+
         if len(result) != 0:
             tpsrows = np.array(result)
-            # nubmer of discreted rotation
-            self.angles = list(set(map(float, tpsrows[:,1])))
+            # self.angles = list([0.0])
+            self.angles = list(set(map(float, tpsrows[:, 3])))
+
             # for plotting
-            self.fttpsids = list(set(map(int, tpsrows[:,2])))
+            self.fttpsids = list(set(map(int, tpsrows[:, 0])))
             self.nfttps = len(self.fttpsids)
 
             idrobot = self.gdb.loadIdRobot(self.robot)
-            for i, idtps in enumerate(tpsrows[:,0]):
-                sql = "SELECT tabletopgrips.idtabletopgrips, tabletopgrips.contactpnt0, tabletopgrips.contactpnt1, \
-                       tabletopgrips.rotmat, tabletopgrips.jawwidth, tabletopgrips.idfreeairgrip \
-                       FROM tabletopgrips,ik,freeairgrip,hand WHERE tabletopgrips.idfreeairgrip = freeairgrip.idfreeairgrip AND \
-                       freeairgrip.idhand = hand.idhand AND\
-                       tabletopgrips.idtabletopgrips=ik.idtabletopgrips AND \
-                       tabletopgrips.idtabletopplacements = %d AND ik.idrobot=%d AND \
-                       ik.feasibility='True' AND ik.feasibility_handx='True' AND ik.feasibility_handxworldz='True' \
-                       AND ik.feasibility_worlda='True' AND ik.feasibility_worldaworldz='True' AND ik.idarm = %d \
-                       AND hand.name LIKE '%s'" \
-                      % (int(idtps), idrobot, idarm, self.handpkg.getHandName())
+
+            for i, idtps in enumerate(tpsrows[:, 0]):
+                sql = "SELECT dropworkcellgrip.iddropworkcellgrip, dropworkcellgrip.contactpnt0, dropworkcellgrip.contactpnt1, \
+                                                              dropworkcellgrip.rotmat, dropworkcellgrip.jawwidth ,dropworkcellgrip.idfreeairgrip\
+                                                              FROM dropworkcellgrip,dropfreegrip,freeairgrip,ik_drop\
+                                                              WHERE \
+                                                               dropworkcellgrip.iddropstablepos = %d  \
+                                                               AND dropworkcellgrip.iddropworkcellgrip=ik_drop.iddropworkcellgrip AND ik_drop.idrobot=%d AND ik_drop.idarm = %d AND\
+                                                               ik_drop.feasibility='True' AND ik_drop.feasibility_handx='True' AND ik_drop.feasibility_handxworldz='True' \
+                                                               AND ik_drop.feasibility_worlda='True' AND ik_drop.feasibility_worldaworldz='True'   \
+                                                               AND dropworkcellgrip.idfreeairgrip = freeairgrip.idfreeairgrip  \
+                                                               AND dropworkcellgrip.idhand = % d AND dropworkcellgrip.iddropfreegrip = dropfreegrip.iddropfreegrip " \
+                      % (int(idtps), idrobot, idarm, idhand)
+
                 resultttgs = self.gdb.execute(sql)
-                if len(resultttgs)==0:
+                if len(resultttgs) == 0:
+                    print "no result"
                     continue
                 localidedges = []
                 for ttgsrow in resultttgs:
@@ -135,80 +150,101 @@ class GraphTpp(object):
                     ttgsrotmat = dc.strToMat4(ttgsrow[3])
                     ttgsjawwidth = float(ttgsrow[4])
                     ttgsidfreeair = int(ttgsrow[5])
-                    ttgsfgrcenter = (ttgscct0+ttgscct1)/2
+                    ttgsfgrcenter = (ttgscct0 + ttgscct1) / 2
                     handx = ttgsrotmat.getRow3(0)
-                    ttgsfgrcenterhandx = ttgsfgrcenter + handx*self.rethandx
-                    ttgsfgrcenterhandxworldz = ttgsfgrcenterhandx + self.worldz*self.retworldz
-                    ttgsfgrcenterworlda = ttgsfgrcenter + self.worlda*self.retworlda
-                    ttgsfgrcenterworldaworldz = ttgsfgrcenterworlda+ self.worldz*self.retworldz
+                    ttgsfgrcenterhandx = ttgsfgrcenter + handx * self.rethandx
+                    ttgsfgrcenterhandxworldz = ttgsfgrcenterhandx + self.worldz * self.retworldz
+                    ttgsfgrcenterworlda = ttgsfgrcenter + self.worlda * self.retworlda
+                    ttgsfgrcenterworldaworldz = ttgsfgrcenterworlda + self.worldz * self.retworldz
                     ttgsfgrcenternp = pg.v3ToNp(ttgsfgrcenter)
+
                     ttgsfgrcenternp_handx = pg.v3ToNp(ttgsfgrcenterhandx)
                     ttgsfgrcenternp_handxworldz = pg.v3ToNp(ttgsfgrcenterhandxworldz)
                     ttgsfgrcenternp_worlda = pg.v3ToNp(ttgsfgrcenterworlda)
                     ttgsfgrcenternp_worldaworldz = pg.v3ToNp(ttgsfgrcenterworldaworldz)
                     ttgsrotmat3np = pg.mat3ToNp(ttgsrotmat.getUpper3())
-                    objrotmat4 = dc.strToMat4(tpsrows[:,4][i])
+
+                    objrotmat4 = pg.npToMat4(np.transpose(pg.mat3ToNp(dc.strToMat3(tpsrows[:, 1][i]))),
+                                             pg.v3ToNp(dc.strToV3(tpsrows[:, 2][i])))
+
                     objrotmat4worlda = Mat4(objrotmat4)
-                    objrotmat4worlda.setRow(3, objrotmat4.getRow3(3)+self.worlda*self.retworlda)
+                    objrotmat4worlda.setRow(3, objrotmat4.getRow3(3) + self.worlda * self.retworlda)
                     objrotmat4worldaworldz = Mat4(objrotmat4worlda)
-                    objrotmat4worldaworldz.setRow(3, objrotmat4worlda.getRow3(3)+self.worldz*self.retworldz)
-                    self.regg.add_node(armname+str(ttgsid), fgrcenter=ttgsfgrcenternp,
-                                       fgrcenterhandx = ttgsfgrcenternp_handx,
-                                       fgrcenterhandxworldz = ttgsfgrcenternp_handxworldz,
-                                       fgrcenterworlda = ttgsfgrcenternp_worlda,
-                                       fgrcenterworldaworldz = ttgsfgrcenternp_worldaworldz,
+                    objrotmat4worldaworldz.setRow(3, objrotmat4worlda.getRow3(3) + self.worldz * self.retworldz)
+
+                    self.regg.add_node('mid' + str(ttgsid), fgrcenter=ttgsfgrcenternp,
+                                       fgrcenterhandx=ttgsfgrcenternp_handx,
+                                       fgrcenterhandxworldz=ttgsfgrcenternp_handxworldz,
+                                       fgrcenterworlda=ttgsfgrcenternp_worlda,
+                                       fgrcenterworldaworldz=ttgsfgrcenternp_worldaworldz,
                                        jawwidth=ttgsjawwidth, hndrotmat3np=ttgsrotmat3np,
-                                       globalgripid = ttgsidfreeair, freetabletopplacementid = int(tpsrows[:,2][i]),
-                                       tabletopplacementrotmat = objrotmat4,
-                                       tabletopplacementrotmathandx = objrotmat4,
-                                       tabletopplacementrotmathandxworldz = objrotmat4,
-                                       tabletopplacementrotmatworlda = objrotmat4worlda,
-                                       tabletopplacementrotmatworldaworldz = objrotmat4worldaworldz,
-                                       angle = float(tpsrows[:,1][i]), tabletopposition = dc.strToV3(tpsrows[:,3][i]))
-                    globalidsedges[str(ttgsidfreeair)].append(armname+str(ttgsid))
-                    localidedges.append(armname+str(ttgsid))
-                # print list(itertools.combinations(ttgrows[:,0], 2))
+                                       globalgripid=ttgsidfreeair,
+                                       # freetabletopplacementid = int(tpsrows[:,2][i]),
+                                       freetabletopplacementid=int(tpsrows[:, 0][i]),
+                                       tabletopplacementrotmat=objrotmat4,
+                                       tabletopplacementrotmathandx=objrotmat4,
+                                       tabletopplacementrotmathandxworldz=objrotmat4,
+                                       tabletopplacementrotmatworlda=objrotmat4worlda,
+                                       tabletopplacementrotmatworldaworldz=objrotmat4worldaworldz,
+                                       angle=float(tpsrows[:, 3][i]),
+                                       tabletopposition=dc.strToV3(tpsrows[:, 2][i]))
+
+                    print "str(ttgsidfreeair),str(ttgsid)", str(ttgsidfreeair), str(ttgsid)
+
+                    globalidsedges[str(ttgsidfreeair)].append('mid' + str(ttgsid))
+                    localidedges.append('mid' + str(ttgsid))
+
                 for edge in list(itertools.combinations(localidedges, 2)):
-                    self.regg.add_edge(*edge, weight=1, edgetype = 'transit')
+                    self.regg.add_edge(*edge, weight=1, edgetype='transit')
+
+                    # toc = time.clock()
+                    # print "(toc - tic2)", (toc - tic)
+
             if len(globalidsedges) == 0:
                 raise ValueError("Plan tabletopgrips first!")
-            for globalidedgesid in globalidsedges.keys():
+
+            # tic = time.clock()
+            for globalidedgesid in globalidsedges:
                 for edge in list(itertools.combinations(globalidsedges[globalidedgesid], 2)):
-                    self.regg.add_edge(*edge, weight=1, edgetype = 'transfer')
+                    self.regg.add_edge(*edge, weight=1, edgetype='transfer')
+                    # toc = time.clock()
+                    # print "(toc - tic3)", (toc - tic)
+        else:
+            print ('No placements planned!')
+            assert ('No placements planned!')
+
+            # for globalidedgesid in globalidsedges.keys():
+            #     for edge in list(itertools.combinations(globalidsedges[globalidedgesid], 2)):
+            #         self.regg.add_edge(*edge, weight=1, edgetype = 'transfer')
 
         # gen plot pos
         # biggest circle: grips; big circle: rotation; small circle: placements
         radiusplacement = 30
-        radiusrot = 6
-        radiusgrip = 1
+        radiusplacement = 0
+        radiusrot = 0
+        radiusgrip = 0
+
         xyplacementspos = {}
         xydiscreterotspos = {}
-        xyzglobalgrippos = {}
+        self.xyzglobalgrippos = {}
         for i, ttpsid in enumerate(self.fttpsids):
             xydiscreterotspos[ttpsid] = {}
-            xyzglobalgrippos[ttpsid] = {}
+            self.xyzglobalgrippos[ttpsid] = {}
             xypos = [radiusplacement * math.cos(2 * math.pi / self.nfttps * i),
                      radiusplacement * math.sin(2 * math.pi / self.nfttps * i)]
             xyplacementspos[ttpsid] = xypos
             for j, anglevalue in enumerate(self.angles):
-                xyzglobalgrippos[ttpsid][anglevalue] = {}
+                self.xyzglobalgrippos[ttpsid][anglevalue] = {}
                 xypos = [radiusrot * math.cos(math.radians(anglevalue)), radiusrot * math.sin(math.radians(anglevalue))]
                 xydiscreterotspos[ttpsid][anglevalue] = \
                     [xyplacementspos[ttpsid][0] + xypos[0], xyplacementspos[ttpsid][1] + xypos[1]]
                 for k, globalgripid in enumerate(self.globalgripids):
                     xypos = [radiusgrip * math.cos(2 * math.pi / len(self.globalgripids) * k),
                              radiusgrip * math.sin(2 * math.pi / len(self.globalgripids) * k)]
-                    xyzglobalgrippos[ttpsid][anglevalue][globalgripid] = \
+                    self.xyzglobalgrippos[ttpsid][anglevalue][globalgripid] = \
                         [xydiscreterotspos[ttpsid][anglevalue][0] + xypos[0],
                          xydiscreterotspos[ttpsid][anglevalue][1] + xypos[1], 0]
-        for nid in self.regg.nodes():
-            fttpid = self.regg.node[nid]['freetabletopplacementid']
-            anglevalue = self.regg.node[nid]['angle']
-            ggid = self.regg.node[nid]['globalgripid']
-            tabletopposition = self.regg.node[nid]['tabletopposition']
-            xyzpos = map(add, xyzglobalgrippos[fttpid][anglevalue][ggid],
-                          [tabletopposition[0], tabletopposition[1], tabletopposition[2]])
-            self.gnodesplotpos[nid] = xyzpos[:2]
+
 
     def plotGraph(self, pltax, offset = [0,0]):
         """

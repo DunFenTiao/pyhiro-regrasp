@@ -5,6 +5,10 @@ import utils.collisiondetection as cd
 from panda3d.core import *
 import pandaplotutils.pandageom as pg
 import gc
+import os
+import trimesh
+from panda3d.core import *
+from panda3d.ode import *
 
 class CollisionChecker(object):
     """
@@ -23,6 +27,9 @@ class CollisionChecker(object):
         """
 
         self.bulletworld = BulletWorld()
+
+
+
         self.robotmesh = robotmesh
         self.counter = 0
 
@@ -103,7 +110,7 @@ class CollisionChecker(object):
         date: 20170608
         """
 
-        dualmnps = self.robotmesh.genmnp_list(robot)
+        dualmnps = self.robotmesh.genmnplist(robot,handpkg)
         # single arm check
         sglmnps = dualmnps[0]
         sglbullnodesrgt = []
@@ -179,7 +186,7 @@ class CollisionChecker(object):
             gc.collect()
         self.counter += 1
 
-        dualmnps = self.robotmesh.genmnp_list(robot)
+        dualmnps = self.robotmesh.genmnplist(robot,handpkg)
         sglbullnodesrgt = []
         sglbullnodeslft = []
         # rgt arm
@@ -207,7 +214,8 @@ class CollisionChecker(object):
         nlinkrgt = len(sglbullnodesrgt)
         nlinklft = len(sglbullnodeslft)
         for obstaclemnp in obstaclelist:
-            obstaclebullnode = cd.genCollisionMeshNp(obstaclemnp, basenodepath=None, name='autogen')
+            #obstaclebullnode = cd.genCollisionMeshNp(obstaclemnp, basenodepath=None, name='autogen')
+            obstaclebullnode = cd.genCollisionMeshGeom(obstaclemnp,  name='autogen')
             for i in range(nlinkrgt - 1, nlinkrgt):
                 result = self.bulletworld.contactTestPair(sglbullnodesrgt[i], obstaclebullnode)
                 if result.getNumContacts():
@@ -270,9 +278,11 @@ if __name__=="__main__":
     from robotsim.hrp5n import hrp5n
     # from robotsim.hrp5n import hrp5nplot
     from robotsim.hrp5n import hrp5nmesh
-    # from robotsim.nextage import nxt
-    # from robotsim.nextage import nxtplot
-    # from manipulation.grip.robotiq85 import rtq85nm
+
+    from robotsim.nextage import nxt
+    from robotsim.nextage import nxtplot
+    from manipulation.grip.robotiq85 import rtq85nm
+
     from manipulation.grip.hrp5three import hrp5threenm
 
     # use the following two sentences to examine the scene
@@ -285,28 +295,53 @@ if __name__=="__main__":
     # handpkg = rtq85nm
     # robotplot = ur5dualplot
 
-    robot = hrp5n.Hrp5NRobot()
-    handpkg = hrp5threenm
-    robotmesh = hrp5nmesh.Hrp5NMesh(handpkg)
-    robotmnp = robotmesh.genmnp(robot)
-    robotmnp.reparentTo(base.render)
+    # robot = hrp5n.Hrp5NRobot()
+    # handpkg = hrp5threenm
+    # robotmesh = hrp5nmesh.Hrp5NMesh(handpkg)
+    # robotmnp = robotmesh.genmnp(robot)
+    # robotmnp.reparentTo(base.render)
 
-    # robot = nxt.NxtRobot()
-    # handpkg = rtq85nm
-    # robotplot = nxtplot
+    robot = nxt.NxtRobot()
+    handpkg = rtq85nm
+    #robotplot = nxtplot
+    robotmnp= nxtplot.genmnp(robot,handpkg)
+    robotmnp.reparentTo(base.render)
+    robotmesh=nxtplot
+
 
     # robot.goinitpose()
     # robot.movearmfk([0.0,-20.0,-60.0,-70.0,-100.0,-30.0,0.0,0.0,0.0])
     # robot.movearmfk([0.0,-20.0,60.0,70.0,-100.0,30.0,0.0,0.0,0.0], armid = 'lft')
-    # robotmnp = robotmesh.genmnp(robot)
+    # #robotmnp = robotmesh.genmnp(robot)
     # robotmnp.reparentTo(base.render)
 
     # ur5dualmnp = ur5dualplot.genUr5dualmnp(robot, handpkg)
     # ur5dualmnp.reparentTo(base.render)
     pg.plotAxisSelf(base.render, Vec3(0,0,0))
 
+    #obstacle list
+    this_dir = "E:/project/manipulation/regrasp_onworkcell/dropsimulation"
+    workcellpath = os.path.join(this_dir, "objects", "checkcollision.stl")
+    workcellmesh = trimesh.load_mesh(workcellpath)
+    workcellgeom = pandageom.packpandageom(workcellmesh.vertices, workcellmesh.face_normals,
+                                                workcellmesh.faces)
+    obstaclelist = [workcellgeom]
+
+    node = GeomNode('obj')
+    node.addGeom(workcellgeom)
+    workcell = NodePath('obj')
+    workcell.attachNewNode(node)
+    workcell.setPos(0, 0, 0)
+    workcell.reparentTo(base.render)
+
+    # this_dir = "E:/project/manipulation/regrasp_onworkcell/dropsimulation"
+    # workcellpath = os.path.join(this_dir, "objects", "ipadbox.egg")
+    # workcellnp = loader.loadModel(workcellpath)
+    #obstaclelist=[workcellnp]
+
     cdchecker = CollisionChecker(robotmesh)
-    print cdchecker.isSelfCollided(robot)
+    #print cdchecker.isSelfCollided(robot)
+    print cdchecker.isCollided(robot,obstaclelist)
 
     bullcldrnp = base.render.attachNewNode("bulletcollider")
     debugNode = BulletDebugNode('Debug')

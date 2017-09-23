@@ -133,15 +133,15 @@ class RegripTpp():
         for ggid in result:
             globalidsedges[str(ggid[0])] = []
             self.globalgripids.append(ggid[0])
-        sql = "SELECT tabletopplacements.idtabletopplacements, angle.value, \
-                tabletopplacements.idfreetabletopplacement, tabletopplacements.tabletopposition, \
-                tabletopplacements.rotmat FROM \
-                tabletopplacements,freetabletopplacement,angle,object WHERE \
-                tabletopplacements.idangle=angle.idangle AND \
-                tabletopplacements.idfreetabletopplacement=freetabletopplacement.idfreetabletopplacement AND \
-                freetabletopplacement.idobject=object.idobject AND \
-                object.name LIKE '%s' AND angle.value IN (0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0)" \
-                % self.dbobjname
+            sql = "SELECT tabletopplacements.idtabletopplacements, angle.value, \
+                    tabletopplacements.idfreetabletopplacement, tabletopplacements.tabletopposition, \
+                    tabletopplacements.rotmat FROM \
+                    tabletopplacements,freetabletopplacement,angle,object WHERE \
+                    tabletopplacements.idangle=angle.idangle AND \
+                    tabletopplacements.idfreetabletopplacement=freetabletopplacement.idfreetabletopplacement AND \
+                    freetabletopplacement.idobject=object.idobject AND \
+                    object.name LIKE '%s' AND angle.value IN (0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0)" \
+                  % self.dbobjname
         result = self.gdb.execute(sql)
         if len(result) != 0:
             tpsrows = np.array(result)
@@ -228,11 +228,13 @@ class RegripTpp():
 
         ### start
         # the node id of a globalgripid in startnode
+
+
         nodeidofglobalidinstart= {}
         # the startnodeids is also for quick access
         self.startnodeids = []
         for j, rotmat in enumerate(self.freegriprotmats):
-            print j, len(self.freegriprotmats)
+            #print j, len(self.freegriprotmats)
             # print rotmat
             ttgsrotmat = rotmat * startrotmat4
             # for collision detection, we move the object back to x=0,y=0
@@ -275,7 +277,7 @@ class RegripTpp():
                 ttgsfgrcenternp_worlda = pg.v3ToNp(ttgsfgrcenterworlda)
                 ttgsfgrcenternp_worldaworldz = pg.v3ToNp(ttgsfgrcenterworldaworldz)
                 ttgsrotmat3np = pg.mat3ToNp(ttgsrotmat.getUpper3())
-                print "solving starting iks"
+                #print "solving starting iks"
                 ikc = self.robot.numikr(ttgsfgrcenternp, ttgsrotmat3np)
                 ikcx = self.robot.numikr(ttgsfgrcenternp_handx, ttgsrotmat3np)
                 ikca = self.robot.numikr(ttgsfgrcenternp_worlda, ttgsrotmat3np)
@@ -308,7 +310,9 @@ class RegripTpp():
             tmphnd.setJawwidth(initjawwidth)
 
         if len(self.startnodeids) == 0:
-            raise ValueError("No available starting grip!")
+            #raise ValueError("No available starting grip!")
+            print ("No available start grip!")
+            return False
 
         # add start transit edge
         for edge in list(itertools.combinations(self.startnodeids, 2)):
@@ -327,7 +331,7 @@ class RegripTpp():
         # the goalnodeids is also for quick access
         self.goalnodeids = []
         for j, rotmat in enumerate(self.freegriprotmats):
-            print j, len(self.freegriprotmats)
+            #print j, len(self.freegriprotmats)
             ttgsrotmat = rotmat * goalrotmat4
             # for collision detection, we move the object back to x=0,y=0
             ttgsrotmatx0y0 = Mat4(goalrotmat4)
@@ -360,7 +364,7 @@ class RegripTpp():
                 ttgsfgrcenternp_worlda = pg.v3ToNp(ttgsfgrcenterworlda)
                 ttgsfgrcenternp_worldaworldz = pg.v3ToNp(ttgsfgrcenterworldaworldz)
                 ttgsrotmat3np = pg.mat3ToNp(ttgsrotmat.getUpper3())
-                print "solving goal iks"
+                #print "solving goal iks"
                 ikc = self.robot.numikr(ttgsfgrcenternp, ttgsrotmat3np)
                 ikcx = self.robot.numikr(ttgsfgrcenternp_handx, ttgsrotmat3np)
                 ikcxz = self.robot.numikr(ttgsfgrcenternp_handxworldz, ttgsrotmat3np)
@@ -394,7 +398,9 @@ class RegripTpp():
             tmphnd.setJawwidth(initjawwidth)
 
         if len(self.goalnodeids) == 0:
-            raise ValueError("No available goal grip!")
+            #raise ValueError("No available goal grip!")
+            print ("No available goal grip!")
+            return False
 
         # add goal transit edges
         for edge in list(itertools.combinations(self.goalnodeids, 2)):
@@ -417,14 +423,18 @@ class RegripTpp():
                     self.regg.add_edge(startnodeid, goalnodeid, weight=1, edgetype = 'startgoaltransfer')
 
     def findshortestpath(self, startrotmat4, goalrotmat4, base):
-        self.__addstartgoal(startrotmat4, goalrotmat4, base)
+        self.directshortestpaths = []
 
+        if self.__addstartgoal(startrotmat4, goalrotmat4, base)==False:
+            print "No path found!"
+            self.directshortestpaths=[]
+            return False
         # startgrip = random.select(self.startnodeids)
         # goalgrip = random.select(self.goalnodeids)
         startgrip = self.startnodeids[0]
         goalgrip = self.goalnodeids[0]
         self.shortestpaths = nx.all_shortest_paths(self.regg, source = startgrip, target = goalgrip)
-        self.directshortestpaths = []
+
         # directshortestpaths removed the repeated start and goal transit
         try:
             for path in self.shortestpaths:
@@ -744,7 +754,7 @@ if __name__=='__main__':
     gdb = db.GraspDB()
 
     hrp5robot = hrp5.Hrp5Robot()
-    nxtrobot = nextage.NxtRobot()
+    nxtrobot = nxt.NxtRobot()
     handpkg = rtq85nm
 
     base = pandactrl.World(camp=[700,300,600], lookatp=[0,0,0])

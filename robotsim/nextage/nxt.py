@@ -18,6 +18,8 @@ class NxtRobot():
         self.__targetjoints = [1,2,3,4,5,6]
         self.goinitpose()
 
+
+
     @property
     def name(self):
         # read-only property
@@ -67,6 +69,28 @@ class NxtRobot():
     def targetjoints(self):
         # read-only property
         return self.__targetjoints
+
+    def getHandName(self):
+        #get name
+        return "nextage"
+
+    def moverightwaist(self, rotangle=0):
+        """
+        rotate the base of the robot
+
+        :param rotangle: in degree
+        :return: null
+
+        author: weiwei
+        date: 20161107
+        """
+
+        # right arm
+        self.rgtarm[0]['rotangle'] = rotangle
+        self.rgtarm[0]['rotmat'] = rm.rodrigues(self.rgtarm[0]['rotax'], self.rgtarm[0]['rotangle'])
+        self.rgtarm[0]['linkend'] = np.squeeze(np.dot(self.rgtarm[0]['rotmat'], self.rgtarm[0]['linkvec'].reshape((-1,))))+self.rgtarm[0]['linkpos']
+        self.__updatefk(self.rgtarm)
+
 
     def movewaist(self, rotangle=0):
         """
@@ -192,6 +216,29 @@ class NxtRobot():
     #         i = self.lftarm[i]['child']
     #
     #     self.movewaist(nxjnts[0])
+
+    def moverightjnts(self, nxjnts):
+        """
+        move all joints of the nextage robo
+
+        :param nxjnts: the definition as self.initjntss
+        :return: null
+
+        author: weiwei
+        date: 20161108
+        """
+
+        narmjoints = len(self.__targetjoints)
+        # right arm
+        i = 1
+        while i != -1:
+            self.rgtarm[i]['rotangle'] = nxjnts[i+2]
+            i = self.rgtarm[i]['child']
+
+
+
+        self.moverightwaist(nxjnts[0])
+
 
     def movealljnts(self, nxjnts):
         """

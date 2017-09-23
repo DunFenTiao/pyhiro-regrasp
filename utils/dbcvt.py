@@ -1,6 +1,43 @@
 # for saving data into mysql
 from panda3d.core import *
 
+def mat3ToStr(pdmat3):
+    """
+    convert a mat3 matrix to a string like e00, e01, e02, ...
+
+    :param pdmat4:
+    :return: a string
+
+    author: jiayao
+    date: 20160809, tsukuba
+    """
+
+    row0 = pdmat3.getRow(0)
+    row1 = pdmat3.getRow(1)
+    row2 = pdmat3.getRow(2)
+
+
+    return ','.join(str(e) for e in row0)+','+','.join(str(e) for e in row1)+\
+           ','+','.join(str(e) for e in row2)
+
+
+
+def LVecBase3fToStr(LVecBase3f):
+    """
+    convert a LVecBase3f to a string like e00, e01, e02, ...
+
+    :param :LVecBase3f
+    :return: a string
+
+    author: jiayao
+    date: 20160810, tsukuba
+    """
+
+    x = LVecBase3f.getX()
+    y = LVecBase3f.getY()
+    z = LVecBase3f.getZ()
+
+    return str(x)+','+str(y)+','+str(z)
 
 def mat4ToStr(pdmat4):
     """
@@ -47,16 +84,21 @@ def strToMat3(dbstr):
     :param str:
     :return: panda Mat4
 
-    author: weiwei
-    date: 20161213, tsukuba
+    author: jiayao
+    date: 20170810, tsukuba
     """
 
     exx = dbstr.split(',')
     exxdecimal = map(float, exx)
-    assert(len(exxdecimal) is 16)
+    assert(len(exxdecimal) is 9)
+
     return Mat3(exxdecimal[0], exxdecimal[1], exxdecimal[2],
-                exxdecimal[4], exxdecimal[5], exxdecimal[6],
-                exxdecimal[8], exxdecimal[9], exxdecimal[10])
+               exxdecimal[3], exxdecimal[4], exxdecimal[5],
+              exxdecimal[6], exxdecimal[7], exxdecimal[8])
+
+
+
+
 
 def v3ToStr(v3):
     """
@@ -68,11 +110,25 @@ def v3ToStr(v3):
 
     return ','.join(str(e) for e in v3)
 
+# def strToVector3(dbstr):
+#     """
+#     convert a string like v0,v1,v2 to a v3
+#
+#     :param string
+#     :return: vector3,no vbase structure.
+#     author: jiayao
+#     date: 20170811, tsukuba
+#     """
+#
+#     exx = dbstr.split(',')
+#     exxdecimal = map(float, exx)
+#     assert(len(exxdecimal) is 3)
+#     return (exxdecimal[0], exxdecimal[1], exxdecimal[2])
+
 def strToV3(dbstr):
     """
-    convert a string like v0,v1,v2 to a v3
 
-    :param v3:
+    :param dbstr: v3
     :return:
     """
 
@@ -80,3 +136,4 @@ def strToV3(dbstr):
     exxdecimal = map(float, exx)
     assert(len(exxdecimal) is 3)
     return VBase3(exxdecimal[0], exxdecimal[1], exxdecimal[2])
+

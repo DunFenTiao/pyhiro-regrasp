@@ -217,8 +217,9 @@ if __name__=='__main__':
     base = pandactrl.World(camp=[0,0,550], lookatp=[0,0,0])
 
     this_dir, this_filename = os.path.split(__file__)
+    print this_dir
     objpath = Filename.fromOsSpecific(os.path.join(this_dir, "objects", "cshape.egg"))
-    odesim = ODESim(base, objpath, nobj = 5)
+    odesim = ODESim(base, objpath, nobj = 1)
 
     # objtrimesh = trimesh.load_mesh(objpath)
     # objnp = pandageom.packpandanp(objtrimesh.vertices,

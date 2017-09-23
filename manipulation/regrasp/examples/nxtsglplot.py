@@ -12,6 +12,7 @@ from pandaplotutils import pandageom as pg
 import matplotlib.pyplot as plt
 import os
 import numpy as np
+from utils import dbcvt as dc
 
 def getMotionSequence(regrip):
     """
@@ -341,7 +342,7 @@ if __name__=='__main__':
     nxtrobot = nxt.NxtRobot()
     handpkg = rtq85nm
 
-    base = pandactrl.World(camp=[300,-2000,1000], lookatp=[300,0,0])
+    base = pandactrl.World(camp=[5000, -1000, 1000], lookatp=[0, 0, 0])
 
     # ttube.stl
     this_dir, this_filename = os.path.split(__file__)
@@ -349,39 +350,77 @@ if __name__=='__main__':
     # objpath = os.path.join(os.path.split(this_dir)[0], "grip", "objects", "tool.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0], "grip", "objects", "planewheel.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0], "grip", "objects", "planelowerbody.stl")
-    objpath = os.path.join(os.path.split(os.path.split(this_dir)[0])[0], "grip", "objects", "planefrontstay.stl")
+    #objpath = os.path.join(os.path.split(os.path.split(this_dir)[0])[0], "grip", "objects", "planefrontstay.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0], "grip", "objects", "planerearstay.stl")
+
+    this_dir = "E:/project/manipulation/regrasp_onworkcell/dropsimulation"
+    objpath = os.path.join(this_dir, "objects", "t2tube.stl")
+    #objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
+    #objpath = os.path.join(this_dir, "objects", "brick.stl")
+    #objpath = os.path.join(this_dir, "objects", "CameraFrontCase.stl")
+
+    #objpath = os.path.join(this_dir, "objects", "boxobject.stl")
+
+
     regrip = regriptpp.RegripTpp(objpath, nxtrobot, handpkg, gdb)
 
-    # ttube
-    startrotmat4 = Mat4(1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,299.979736328,-400.002502441,-55.0,1.0)
-    goalrotmat4 = Mat4(0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,-1.0,0.0,0.0,0.0,334.749847412,-400.002502441,-39.9999961853,1.0)
-    #tool
-    # startrotmat4 = Mat4(-0.0176398064941,-0.0176398064941,-0.99968880415,0.0,-0.707106769085,0.707106769085,0.0,0.0,0.706886708736,0.706886708736,-0.0249464549124,0.0,225.010162354,100,44.9175643921,1.0)
-    # startrotmat4 = Mat4(0.129405856133,0.129405856133,0.98311150074,0.0,0.707106769085,-0.707106769085,0.0,0.0,0.69516479969,0.69516479969,-0.183007523417,0.0,227.126983643,-327.023590088,74.7615509033,1.0)
-    # goalrotmat4 = Mat4(-1.0,1.22464685259e-16,0.0,0.0,-1.22464685259e-16,-1.0,0.0,0.0,0.0,0.0,1.0,0.0,294.747955322,-300.0731293559074,-3.99246982852e-06,1.0)
-    # planewheel
-    # startrotmat4 = Mat4(0.707106769085,0.707106769085,0.0,0.0,-4.32978030171e-17,4.32978030171e-17,-1.0,0.0,-0.707106769085,0.707106769085,6.12323426293e-17,0.0,400.0,-400.0,29.9999980927,1.0)
-    # goalrotmat4 = Mat4(0.707106769085,-0.707106769085,0.0,0.0,4.32978030171e-17,4.32978030171e-17,-1.0,0.0,0.707106769085,0.707106769085,6.12323426293e-17,0.0,400.0,-1.7017070846e-15,29.9999980927,1.0)
-    # planelowerbody
-    # startrotmat4 = Mat4(1.35963113277e-32,6.12323426293e-17,-1.0,0.0,-1.0,2.22044604925e-16,0.0,0.0,2.22044604925e-16,1.0,6.12323426293e-17,0.0,399.997558594,-16.3771038055,74.2884140015,1.0)
-    # goalrotmat4 = Mat4(1.35963113277e-32,6.12323426293e-17,-1.0,0.0,-1.0,2.22044604925e-16,0.0,0.0,2.22044604925e-16,1.0,6.12323426293e-17,0.0,399.997558594,-216.377105713,74.2884140015,1.0)
-    # planefrontstay
-    # startrotmat4 = Mat4(0.707106769085,-0.707106769085,0.0,0.0,0.707106769085,0.707106769085,0.0,0.0,0.0,0.0,1.0,0.0,399.983917236,-399.987426758,8.91688500815e-07,1.0)
-    # goalrotmat4 = Mat4(-4.32978030171e-17,-4.32978030171e-17,-1.0,0.0,0.707106769085,-0.707106769085,0.0,0.0,-0.707106769085,-0.707106769085,6.12323426293e-17,0.0,424.570098877,224.573623657,14.9999990463,1.0)
-    # goalrotmat4 = Mat4(-6.12323426293e-17,7.49879952079e-33,1.0,0.0,-1.22464685259e-16,-1.0,0.0,0.0,1.0,-1.22464685259e-16,6.12323426293e-17,0.0,465.250152588,200.002487183,15.000002861,1.0)
-    # planerearstay
-    # startrotmat4 = Mat4(-0.771227538586,-0.409778445959,-0.487123966217,0.0,-0.00774340564385,0.771227538586,-0.636512517929,0.0,0.636512517929,-0.487123966217,-0.597964942455,0.0,293.626312256,-47.1169815063,-13.2552099228,1.0)
-    # goalrotmat4 = Mat4(0.705433428288,0.705435693264,0.0687321424484,0.0,-0.707105636597,0.707107901573,-4.63324249722e-05,0.0,-0.0486337244511,-0.04856820032,0.997635126114,0.0,491.219848633,-108.780509949,11.8269386292,1.0)
-
-    # import time
-    # tic = time.clock()
-    regrip.findshortestpath(startrotmat4, goalrotmat4, base)
-    # toc = time.clock()
-    # print len(regrip.directshortestpaths[0])
-    # print toc-tic
-    # assert False
+    # rplacement1 = Mat4(1.0, -0.000112805166282, 0.000112921290565, 0.0, -0.000112805166282, 0.00102891668212,
+    #                    0.999999463558, 0.0, -0.000112921290565, -0.999999463558, 0.00102890387643, 0.0, \
+    #                    400 - 47.7748527527, -100 + 3.9369931221, -0.00943910703063 - 55 + 5, 1.0)
     #
+    # lplacement5 = Mat4(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, \
+    #                    300 - 47.7774200439, 200 - 18.7865543365, 15.0 - 55 + 5, 1.0)
+    #
+    # startrotmat4 = rplacement1
+    # goalrotmat4 = lplacement5
+
+    # objstart = pg.genObjmnp(objpath, color=Vec4(.7, .7, 0, 1))
+    # objstart.setMat(startrotmat4)
+    # objend = pg.genObjmnp(objpath, color=Vec4(.3, .3, 0, .5))
+    # objend.setMat(goalrotmat4)
+    #
+    # objstart.reparentTo(base.render)
+    # objend.reparentTo(base.render)
+
+    # #
+    # # # import time
+    # # # tic = time.clock()
+    #regrip.findshortestpath(startrotmat4, goalrotmat4, base)
+    dbobjname = os.path.splitext(os.path.basename(objpath))[0]
+    sql = "SELECT startgoal.idstartgoal,startgoal.rotmat,startgoal.idfreetabletopplacement FROM startgoal,freetabletopplacement,object WHERE \
+                           startgoal.idfreetabletopplacement=freetabletopplacement.idfreetabletopplacement AND \
+                            freetabletopplacement.idobject=object.idobject AND object.name LIKE '%s'" % dbobjname
+    result = gdb.execute(sql)
+    result = np.asarray(result)
+    idsglist = [int(x) for x in result[:, 0]]
+    sgrotmatlist = [dc.strToMat4(x) for x in result[:, 1]]
+    idfreeplacementlist = [int(x) for x in result[:, 2]]
+
+    for idstart, start in zip(idsglist, sgrotmatlist):
+        for idgoal, goal in zip(idsglist, sgrotmatlist):
+            # print idstart, idgoal
+            if idstart == 2 and idgoal == 1:
+                print start, goal
+                startrotmat4=start
+                goalrotmat4=goal
+                regrip.findshortestpath(start, goal, base)
+                break
+                #
+    objstart = pg.genObjmnp(objpath, color=Vec4(.7, .7, 0, 1))
+    objstart.setMat(startrotmat4)
+    objend = pg.genObjmnp(objpath, color=Vec4(.3, .3, 0, .5))
+    objend.setMat(goalrotmat4)
+
+    objstart.reparentTo(base.render)
+    objend.reparentTo(base.render)
+
+
+    print "path result on table", len(regrip.directshortestpaths)
+    # # # # toc = time.clock()
+    # # # # print len(regrip.directshortestpaths[0])
+    # # # # print toc-tic
+    # # # # assert False
+    # # # #
     pltfig = plt.figure()
     regrip.plotgraph(pltfig)
     regrip.plotshortestpath(pltfig)
@@ -414,21 +453,5 @@ if __name__=='__main__':
                           extraArgs = [objms, numikrms, jawwidth, nxtmnp, objmnp, counter, nxtrobot, handpkg, objpath],
                           appendTask = True)
 
-    # one time show for start and end
-    objstart = pg.genObjmnp(objpath, color=Vec4(.7, .7, 0, 1))
-    objstart.setMat(startrotmat4)
-    objend = pg.genObjmnp(objpath, color=Vec4(.3, .3, 0, .5))
-    objend.setMat(goalrotmat4)
-
-    objstart.reparentTo(base.render)
-    objend.reparentTo(base.render)
-
-    # this_dir, this_filename = os.path.split(__file__)
-    # ttpath = Filename.fromOsSpecific(
-    #     os.path.join(os.path.split(this_dir)[0] + os.sep, "grip", "supports", "tabletop.egg"))
-    # ttnodepath = NodePath("tabletop")
-    # ttl = loader.loadModel(ttpath)
-    # ttl.instanceTo(ttnodepath)
-    # ttnodepath.reparentTo(base.render)
 
     base.run()

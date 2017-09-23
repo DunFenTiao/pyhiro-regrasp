@@ -51,7 +51,7 @@ class TablePlacements(object):
         self.handpkg = handpkg
         self.handname = handpkg.getHandName()
 
-    def saveToDB(self, positionlist, gdb, discretesize=8.0):
+    def saveToDB(self, positionlist, gdb, discretesize=4.0):
         """
 
         :param positionlist: a list of positions to place the object one the table
@@ -331,10 +331,10 @@ if __name__ == '__main__':
     hrp2k = hrp2k.Hrp2KRobot()
 
     base = pandactrl.World(camp=[1000,400,1000], lookatp=[400,0,0])
-    this_dir, this_filename = os.path.split(__file__)
+    #this_dir, this_filename = os.path.split(__file__)
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "ttube.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "tool.stl")
-    objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "tool2.stl")
+    #objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "tool2.stl")
     # done 20170307
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "planewheel.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "planelowerbody.stl")
@@ -342,9 +342,20 @@ if __name__ == '__main__':
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "planefrontstay.stl")
     # objpath = os.path.join(os.path.split(this_dir)[0]+os.sep, "grip", "objects", "planerearstay.stl")
 
+    this_dir = "E:/project/manipulation/regrasp_onworkcell/dropsimulation"
+    #objpath = os.path.join(this_dir, "objects", "t2tube.stl")
+    #objpath = os.path.join(this_dir, "objects", "spanner.stl")
+
+    #objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
+    #objpath = os.path.join(this_dir, "objects", "brick.stl")
+    #objpathWorkcell = os.path.join(this_dir, "objects", "ipadbox.stl")
+    objpath = os.path.join(this_dir, "objects", "CameraFrontCase.stl")
+    #objpath = os.path.join(this_dir, "objects", "boxobject.stl")
+
+
     from manipulation.grip.hrp5three import hrp5threenm
-    handpkg = hrp5threenm
-    # handpkg = rtq85nm
+    #handpkg = hrp5threenm
+    handpkg = rtq85nm
     print objpath
     tps = TablePlacements(objpath, handpkg)
 
@@ -384,23 +395,35 @@ if __name__ == '__main__':
     #     return task.cont
 
     # # build grid space
-    # grids = []
+    grids = []
     # for x in range(300,401,100):
     #     for y in range(-200,201,200):
     #         grids.append([x,y,-55])
+    # for x in range(500,650,100):
+    #     for y in range(-100,101,200):
+    #         grids.append([x,y,-55])
+
+    # for x in range(300,400,100):
+    #     for y in range(-100,200,30):
+    #        grids.append([x,y,-55])
+
+    x=400
+    y=0
+    grids.append([x, y, -55])
+
     # grids = []
     # for x in range(400,401,200):
     #     for y in range(-300,301,600):
     #         grids.append([x,y,120])
     gdb = db.GraspDB()
-    # tps.saveToDB(grids, gdb)
-    # # # tps.grpshow(base, gdb)
-    # tps.updateDBwithIK(gdb, hrp5n, armname = "rgt")
-    # tps.updateDBwithIK(gdb, hrp5n, armname = "lft")
-    # tps.updateDBwithIK(gdb, nxtrobot, armname = "rgt")
-    # tps.updateDBwithIK(gdb, nxtrobot, armname = "lft")
-    # tps.updateDBwithIK(gdb, hrp2k, armname = "rgt")
-    # tps.updateDBwithIK(gdb, hrp2k, armname = "lft")
+    tps.saveToDB(grids, gdb)
+    # # tps.grpshow(base, gdb)
+    #tps.updateDBwithIK(gdb, hrp5n, armname = "rgt")
+    #tps.updateDBwithIK(gdb, hrp5n, armname = "lft")
+    tps.updateDBwithIK(gdb, nxtrobot, armname = "rgt")
+    #tps.updateDBwithIK(gdb, nxtrobot, armname = "lft")
+    #tps.updateDBwithIK(gdb, hrp2k, armname = "rgt")
+    #tps.updateDBwithIK(gdb, hrp2k, armname = "lft")
 
 
     # bullcldrnp = base.render.attachNewNode("bulletcollider")

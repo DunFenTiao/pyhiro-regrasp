@@ -76,6 +76,7 @@ class NxtSocket():
                   + motiontime
         self.__send(message, 'joints15moved!')
 
+
     def __send(self, message, confirmmessage):
         """
         confirm pairs:

@@ -459,16 +459,16 @@ if __name__ == '__main__':
     this_dir, this_filename = os.path.split(__file__)
     # objpath = os.path.join(this_dir, "objects", "ttube.stl")
     # objpath = os.path.join(this_dir, "objects", "tool.stl")
-    objpath = os.path.join(this_dir, "objects", "tool2.stl")
+    #objpath = os.path.join(this_dir, "objects", "tool2.stl")
     # objpath = os.path.join(this_dir, "objects", "planewheel.stl")
-    # objpath = os.path.join(this_dir, "objects", "planelowerbody.stl")
+    #objpath = os.path.join(this_dir, "objects", "planelowerbody.stl")
     # objpath = os.path.join(this_dir, "objects", "planefrontstay.stl")
-    # objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
+    objpath = os.path.join(this_dir, "objects", "planerearstay.stl")
     print objpath
 
     from manipulation.grip.hrp5three import hrp5threenm
-    handpkg = hrp5threenm
-    # handpkg = rtq85nm
+    #handpkg = hrp5threenm
+    handpkg = rtq85nm
     gdb = db.GraspDB()
     tps = FreeTabletopPlacement(objpath, handpkg, gdb)
 
@@ -512,22 +512,22 @@ if __name__ == '__main__':
     # star.setColor(Vec4(0, 1, 0, .3))
     # star.setTransparency(TransparencyAttrib.MAlpha)
     # star.reparentTo(base.render)
-    def updateshow(task):
-        # tps.ocfacetshow(base)
-        tps.removebadfacetsshow(base, doverh=.15)
-        return task.again
-    taskMgr.doMethodLater(.1, updateshow, "tickTask")
+    # def updateshow(task):
+    #     # tps.ocfacetshow(base)
+    #     tps.removebadfacetsshow(base, doverh=.13)
+    #     return task.again
+    # taskMgr.doMethodLater(.1, updateshow, "tickTask")
 
     # def updateworld(world, task):
     #     world.doPhysics(globalClock.getDt())
     #     return task.cont
     #
-    # if tps.loadFreeTabletopPlacement():
-    #     pass
-    # else:
-    #     tps.removebadfacets(base, doverh=.15)
-    # tps.gentpsgrip(base)
-    # tps.saveToDB()
+    if tps.loadFreeTabletopPlacement():
+        pass
+    else:
+        tps.removebadfacets(base, doverh=.15)
+    tps.gentpsgrip(base)
+    tps.saveToDB()
     #
     # bullcldrnp = base.render.attachNewNode("bulletcollider")
     # debugNode = BulletDebugNode('Debug')
@@ -539,6 +539,6 @@ if __name__ == '__main__':
     #
     # taskMgr.add(updateworld, "updateworld", extraArgs=[tps.bulletworldhp], appendTask=True)
 
-    # tps.grpshow(base)
-    # tps.showOnePlacementAndAssociatedGrips(base)
+    #tps.grpshow(base)
+    tps.showOnePlacementAndAssociatedGrips(base)
     base.run()

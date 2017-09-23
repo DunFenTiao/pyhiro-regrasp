@@ -1,7 +1,7 @@
 import motionplanning.collisionchecker as cdck
 import pandaplotutils.pandactrl as pandactrl
 from manipulation.grip.robotiq85 import rtq85nm
-from motionplanning import rrt
+from motionplanning.rrt import rrt
 from robotsim.nextage import nxt
 from robotsim.nextage import nxtplot
 
